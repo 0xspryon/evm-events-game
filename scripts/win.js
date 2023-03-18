@@ -13,6 +13,8 @@ async function main() {
   const game = await hre.ethers.getContractAt(contractName, gameAddr);
 
   // do whatever you need to do to win the game here:
+  const txAllowance = await game.giveMeAllowance(11000);
+  const txMint = await game.mint(10000);
   const tx = await game.win();
 
   // did you win? Check the transaction receipt!
