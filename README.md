@@ -98,3 +98,6 @@ running the deploy scripts using the
 `npm run deploy[:1,2,3,4,5]` creates a .env file
 with the appropriate values to run the win script
 on the deployed contract using `npm run win` command.
+
+# Solutions
+solutions to each game can be found in the appropriate files in the following branches `game1`, `game2`, `game3`, `game5`.
