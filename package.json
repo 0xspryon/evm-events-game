@@ -6,7 +6,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "hardhat": "^2.12.4"
+  },
+  "scripts": {
+    "hardhat": "hardhat",
+    "win": "hardhat run scripts/win.js",
+    "deploy": "export GAME=Game1 && hardhat run scripts/deploy.js",
+    "deploy:1": "export GAME=Game1 && hardhat run scripts/deploy.js",
+    "deploy:2": "export GAME=Game2 && hardhat run scripts/deploy.js",
+    "deploy:3": "export GAME=Game3 && hardhat run scripts/deploy.js",
+    "deploy:4": "export GAME=Game4 && hardhat run scripts/deploy.js",
+    "deploy:5": "export GAME=Game5 && hardhat run scripts/deploy.js"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^2.0.0"

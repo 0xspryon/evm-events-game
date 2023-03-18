@@ -1,18 +1,24 @@
-// add the game address here and update the contract name if necessary
-const gameAddr = "";
-const contractName = "Game1";
+require("dotenv").config()
+
+const gameAddr = process.env.GAME_ADDRESS;
+const contractName = process.env.GAME;
+
+if (!gameAddr || !contractName) {
+  console.error(`env variables GAME_ADDRESS && GAME weren't defined`)
+  process.exit(1)
+}
 
 async function main() {
-    // attach to the game
-    const game = await hre.ethers.getContractAt(contractName, gameAddr);
+  // attach to the game
+  const game = await hre.ethers.getContractAt(contractName, gameAddr);
 
-    // do whatever you need to do to win the game here:
-    const tx = await game.win();
+  // do whatever you need to do to win the game here:
+  const tx = await game.win();
 
-    // did you win? Check the transaction receipt!
-    // if you did, it will be in both the logs and events array
-    const receipt = await tx.wait();
-    console.log(receipt);
+  // did you win? Check the transaction receipt!
+  // if you did, it will be in both the logs and events array
+  const receipt = await tx.wait();
+  console.log(receipt);
 }
 
 main()
